@@ -1,0 +1,13 @@
+<root>
+	<!-- Builtin DOTA loading background -->
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />
+		<include src="s2r://panorama/styles/custom_game/custom_loading_screen.vcss_c" />
+	</styles>
+	<Panel class="AddonLoadingRoot">
+		<Panel id="NamePanel" >
+			<Image id="Forest_PNG" class="SeqImg" src="s2r://panorama/images/custom_game/loading_screen/gamemode_png.vtex" />
+		</Panel>
+	</Panel>
+</root>

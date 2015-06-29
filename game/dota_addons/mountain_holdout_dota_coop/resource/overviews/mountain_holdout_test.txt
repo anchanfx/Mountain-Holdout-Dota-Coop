@@ -1,0 +1,8 @@
+mountain_holdout_test
+{
+	material materials/overviews/mountain_holdout_test.vmat
+	pos_x -7232
+	pos_y 7850
+	scale 14.063
+}
+
