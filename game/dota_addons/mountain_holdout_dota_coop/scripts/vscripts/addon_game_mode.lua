@@ -11,6 +11,9 @@ Holdout Example
 ]]
 require( "holdout_game_round" )
 require( "holdout_game_spawner" )
+require('util')
+require('timers')
+require('physics')
 
 if CHoldoutGameMode == nil then
 	CHoldoutGameMode = class({})
