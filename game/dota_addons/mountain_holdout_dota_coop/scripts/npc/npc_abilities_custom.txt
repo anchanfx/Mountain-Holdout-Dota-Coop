@@ -9118,7 +9118,43 @@
 			}
 		}
 	}
-	
+
+	"npc_holdout_hero_undying_tombstone"
+	{
+		"BaseClass"				"undying_tombstone"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"FightRecapLevel"		"1"
+		"AbilityTextureName"	"undying_tombstone"
+		"SpellImmunityType"		"SPELL_IMMUNITY_ENEMIES_YES"
+
+		"AbilityManaCost"				"150 180 210 250"
+		"AbilityCooldown"				"100.0 100.0 100.0 100.0"
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 6.0 9.0 12.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300 350 400 500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_threshold"		"100 100 100 100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"zombie_interval"		"3.0"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Wraith King: Summon Tombstone
 	//=================================================================================================================
@@ -10013,7 +10049,7 @@
 					{
 						"Target"	"CASTER"
 						"Type"		"DAMAGE_TYPE_MAGICAL"
-						"Damage"	"%self_rot_tick_damage"
+						"Damage"	"%rot_tick_damage"
 					}
 
 					"ActOnTargets"
@@ -10095,17 +10131,17 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"flesh_heap_magic_resist"		"6 8 10 12"
+				"flesh_heap_magic_resist"		"6 9 12 15"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"flesh_heap_strength_buff_amount"	"0.05 0.05 0.05 0.05"
+				"flesh_heap_strength_buff_amount"	"0.05 0.05 0.075 0.075"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"flesh_heap_range"		"200"
+				"flesh_heap_range"		"250"
 			}
 		}
 
@@ -10413,7 +10449,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.5 16.5 10.5 4.0"
+		"AbilityCooldown"				"16.0 12.0 8.0 4.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -10426,7 +10462,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"250 350 450 550"
+				"radius"					"250 350 450 600"
 			}
 			
 			"02"
