@@ -7,9 +7,9 @@
 	vertical-align: top;
 	margin-top: 150px;
     flow-children: down;
-    padding: 10px;
+    padding: 15px;
 	
-    transform: translatex( -600px );
+    transform: translatex( -800px );
     transition-property: transform;
     transition-duration: 0.1s;
 }
@@ -92,36 +92,10 @@
 {
 	vertical-align: top;
 	horizontal-align: right;
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
 	margin-top: 2px;
 	margin-right: 2px;
-}
-
-#TeamScore
-{
-	vertical-align: center;
-	horizontal-align: center;
-	color: #cccccc;
-	font-size: 42px;
-	text-shadow: 2px 2px 2px black;
-	font-weight: bold;
-	margin-top: -3px;
-}
-
-.one_player #TeamScore
-{
-	font-size: 32px;
-}
-
-
-#TeamScorePanel
-{
-	margin-top: 1px;
-	margin-left: 286px;
-	width: 49px;
-	height: 100%;
-    background-color: BACKGROUND_COLOR;
 }
 
 .Legend
@@ -131,21 +105,22 @@
 
 .Legend Label
 {
+	
 	text-shadow: 2px 2px 2px black;
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 16px;
 	color: #90999b;
 }
 
 .PlayerRow
 {
-	height: 32px;
+	height: 40px;
 }
 
 #PlayerRowContainer
 {
 	flow-children: right;
-	height: 32px;
+	height: 40px;
 }
 
 #HeroIcon
@@ -156,8 +131,7 @@
 
 #LevelContainer,
 #KillsContainer,
-#DeathsContainer,
-#AssistsContainer
+#DeathsContainer
 {
 	height: 100%;
 }
@@ -175,6 +149,20 @@
 	margin-left: 1px;
 }
 
+#PlayerItemsContainer
+{
+	flow-children: right;
+}
+
+#PlayerItemsContainer Image
+{
+	margin: 1px;
+	width: 41px;
+	height: 30px;
+	background-color: BACKGROUND_COLOR;
+}
+
+
 .is_local_player .ScoreboardPanel
 {
 //    background-color: BACKGROUND_COLOR_WHITE;
@@ -188,7 +176,7 @@
 
 .UltimateIndicatorShared
 {
-	margin-left: 44px;
+	margin-left: 57px;
 	margin-top: 2px;
 	vertical-align: center;
 	width: 20px;
@@ -206,11 +194,10 @@
 }
 
 #Kills,
-#Deaths,
-#Assists
+#Deaths
 {
 	vertical-align: center;
-	font-size: 18px;
+	font-size: 24px;
 	text-align: center;
 	margin-top: 3px;
 	width: 100%;
@@ -219,7 +206,7 @@
 #PlayerName
 {
 	color: white;
-	font-size: 14px;
+	font-size: 18px;
 	margin-bottom: -4px;
 	margin-top: 0px;
 	white-space: nowrap;
@@ -228,7 +215,7 @@
 #HeroNameAndDescription
 {
 	color: #898b8c;
-	font-size: 13px;
+	font-size: 16px;
 	text-shadow: 2px 2px 2px black;
 	margin-top: -1px;
 }
@@ -265,12 +252,12 @@
 
 #TeammateGoldAmount
 {
-	margin-right: -1px;
+	margin-right: 10px;
 	margin-bottom: -2px;
-	vertical-align: bottom;
+	vertical-align: center;
 	horizontal-align: right;
 	color: #ffd300;
-	font-size: 13px;
+	font-size: 18px;
 	text-shadow: 2px 2px 2px black;
 	visibility: collapse;
 }
@@ -293,7 +280,6 @@
 
 .is_local_player #Kills,
 .is_local_player #Deaths,
-.is_local_player #Assists,
 .is_local_player #Level,
 .is_local_player #HeroName
 {
@@ -307,25 +293,28 @@
 
 .ScoreCol_PlayerDetails
 {
-	width: 170px;
+	width: 250px;
 }
 
 .ScoreCol_Hero
 {
-	width: 53px;
+	width: 65px;
 }
 
-.ScoreCol_TeamScore
+.ScoreCol_Kills
 {
-	width: 50px;
+	width: 100px;
 	text-align: center;
 }
 
-.ScoreCol_Kills,
-.ScoreCol_Deaths,
-.ScoreCol_Assists
+.ScoreCol_Deaths
 {
-	width: 50px;
+	width: 60px;
 	text-align: center;
 }
 
+.ScoreCol_Items
+{
+	width: 258px;
+	text-align: center;
+}

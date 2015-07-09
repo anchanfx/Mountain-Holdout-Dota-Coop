@@ -1,13 +1,21 @@
 "AddonInfo"
 {                                    
-    addontitle              "Mountain Holdout DotA Coop"
+    addontitle              "Mountain Holdout"
     addonversion            0.5                                      
     addontagline            "Survival Defense Coop"				        
     addonauthor             "AnchanS"
-    addonDescription        "10 players try to defense the DotA mountain against waves of monsters"
+    addonDescription        "10 players try to defend the mountain from waves of creeps"
 
 	"TeamCount"		"10"
-	"mountain_holdout_dota_coop"
+	"maps"		"mountain_holdout mountain_holdout_old"
+	"IsPlayable"	"1"
+	
+	"mountain_holdout"
+	{
+		"MaxPlayers"		"10"
+	}
+
+	"mountain_holdout_old"
 	{
 		"MaxPlayers"		"10"
 	}

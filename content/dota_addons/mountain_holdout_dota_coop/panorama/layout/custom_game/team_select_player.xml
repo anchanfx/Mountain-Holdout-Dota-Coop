@@ -7,9 +7,9 @@
 		<include src="file://{resources}/scripts/custom_game/team_select_player.js" />
 	</scripts>
 	<Panel class="TeamSelectPlayer">
-		<DOTAAvatarImage id="PlayerAvatar" />
-		<Label id="PlayerIsHostPanel" />
 		<Label id="PlayerName" text="PLAYER_NAME" />
-		<Button id="PlayerLeaveTeamButton" onactivate="OnLeaveTeamPressed()" />
+		<Label id="PlayerIsHostPanel" />
+		<DOTAAvatarImage id="PlayerAvatar" />
+		<!-- <Button id="PlayerLeaveTeamButton" onactivate="OnLeaveTeamPressed()" /> -->
 	</Panel>
 </root>

@@ -10,8 +10,7 @@
 
 #TopBarScoreboard
 {
-	margin-left: 450px;
-    horizontal-align: left;
+    horizontal-align: center;
     vertical-align: top;
 }
 
@@ -134,31 +133,6 @@
 	}
 }
 
-
-#LogoAndScore
-{
-    height: 100%;
-	width: 32px;
-}
-
-#TeamScore
-{
-	vertical-align: bottom;
-	horizontal-align: center;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-shadow: 4px 4px 4px black;
-	margin-bottom: -2px;
-}
-
-#TeamDarkenWash
-{
-    width: 100%;
-    height: 42px;
-    background-color: gradient( linear, 25px 0%, 40px 0%, from( black ), to( transparent ) );
-}
-
 #TeamStatus
 {
     width: 100%;
@@ -167,12 +141,13 @@
 
 #PlayersContainer
 {
-    padding-left: 24px;
+    padding-left: 0px;
     flow-children: right;
 }
 
 #TeamColorBar
 {
+	
 }
 
 #TeamOverlayBar

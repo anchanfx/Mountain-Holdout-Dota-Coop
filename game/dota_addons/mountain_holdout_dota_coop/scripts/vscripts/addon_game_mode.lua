@@ -11,6 +11,9 @@ Holdout Example
 ]]
 require( "holdout_game_round" )
 require( "holdout_game_spawner" )
+require('util')
+require('timers')
+require('physics')
 
 if CHoldoutGameMode == nil then
 	CHoldoutGameMode = class({})
@@ -37,6 +40,9 @@ function Precache( context )
 	
 	PrecacheUnitByNameAsync( "npc_dota_hero_skeleton_king", function(unit) end )
 	PrecacheModel( "npc_dota_hero_skeleton_king", context )
+
+	PrecacheUnitByNameSync("npc_1_swordsman", context)
+	PrecacheUnitByNameSync("npc_1_ranger", context)
 end
 
 -- Actually make the game mode when we activate
@@ -63,7 +69,7 @@ function CHoldoutGameMode:InitGameMode()
 	GameRules:SetHeroRespawnEnabled( false )
 	GameRules:SetUseUniversalShopMode( true )
 	GameRules:SetHeroSelectionTime( 30.0 )
-	GameRules:SetPreGameTime( 20.0 )
+	GameRules:SetPreGameTime( 30.0 )
 	GameRules:SetPostGameTime( 60.0 )
 	GameRules:SetTreeRegrowTime( 60.0 )
 	GameRules:SetHeroMinimapIconScale( 0.7 )
@@ -77,7 +83,7 @@ function CHoldoutGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetFogOfWarDisabled( false )
 	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1500.0 )
 	GameRules:GetGameModeEntity():SetRecommendedItemsDisabled( true )
-	
+
 --	GameRules:GetGameModeEntity():SetHUDVisible( DOTA_HUD_VISIBILITY_TOP_TIMEOFDAY, false )
 --	GameRules:GetGameModeEntity():SetHUDVisible( DOTA_HUD_VISIBILITY_TOP_HEROES, false )
 --	GameRules:GetGameModeEntity():SetHUDVisible( DOTA_HUD_VISIBILITY_TOP_SCOREBOARD, false )
@@ -195,9 +201,13 @@ end
 function CHoldoutGameMode:OnGameRulesStateChange()
 	local nNewState = GameRules:State_Get()
 	if nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
-		ShowGenericPopup( "#holdout_instructions_title", "#holdout_instructions_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
+		-- ShowGenericPopup( "#holdout_instructions_title", "#holdout_instructions_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
+		if self._nRoundNumber < 2 then
+			self._flPrepTimeEnd = 1
+		else
+			self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
+		end
 	end
 end
 

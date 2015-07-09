@@ -6,5 +6,5 @@ function OnStartTouch(trigger)
         -- Stop the hero, so he doesn't move
         trigger.activator:Stop()
         -- Refocus the camera of said player to the position of the teleported hero.
-        SendToConsole("dota_camera_center")
+        -- SendToConsole("dota_camera_center")
 end

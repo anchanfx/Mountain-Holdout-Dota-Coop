@@ -120,6 +120,15 @@ function CHoldoutGameRound:End()
 			end
 		end
 	end
+
+	-- GIVE GOLD 
+	local nGoldtoGivePlayers = self._nMaxGold
+	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+		if PlayerResource:HasSelectedHero( nPlayerID ) then
+			PlayerResource:ModifyGold( nPlayerID, nGoldtoGivePlayers, true, DOTA_ModifyGold_Unspecified )
+		end
+	end
+
 	local nTowersStandingGoldReward = self._gameMode:ComputeTowerBonusGold( nTowers, nTowersStanding )
 	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:HasSelectedHero( nPlayerID ) then
@@ -240,6 +249,7 @@ function CHoldoutGameRound:OnEntityKilled( event )
 		local playerID = attackerUnit:GetPlayerOwnerID()
 		local playerStats = self._vPlayerStats[ playerID ]
 		if playerStats then
+			PlayerResource:IncrementKills( playerID, 1)
 			playerStats.nCreepsKilled = playerStats.nCreepsKilled + 1
 		end
 	end
@@ -296,12 +306,12 @@ function CHoldoutGameRound:_CheckForGoldBagDrop( killedUnit )
 	self._nGoldRemainingInRound = math.max( 0, self._nGoldRemainingInRound - nGoldToDrop )
 	self._nGoldBagsRemaining = math.max( 0, self._nGoldBagsRemaining - 1 )
 
-	local newItem = CreateItem( "item_bag_of_gold", nil, nil )
-	newItem:SetPurchaseTime( 0 )
-	newItem:SetCurrentCharges( nGoldToDrop )
-	local drop = CreateItemOnPositionSync( killedUnit:GetAbsOrigin(), newItem )
-	local dropTarget = killedUnit:GetAbsOrigin() + RandomVector( RandomFloat( 50, 350 ) )
-	newItem:LaunchLoot( true, 300, 0.75, dropTarget )
+	--local newItem = CreateItem( "item_bag_of_gold", nil, nil )
+	--newItem:SetPurchaseTime( 0 )
+	--newItem:SetCurrentCharges( nGoldToDrop )
+	--local drop = CreateItemOnPositionSync( killedUnit:GetAbsOrigin(), newItem )
+	--local dropTarget = killedUnit:GetAbsOrigin() + RandomVector( RandomFloat( 50, 350 ) )
+	--newItem:LaunchLoot( true, 300, 0.75, dropTarget )
 end
 
 

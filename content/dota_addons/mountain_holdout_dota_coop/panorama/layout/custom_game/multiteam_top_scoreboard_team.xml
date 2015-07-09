@@ -26,10 +26,8 @@
 			<Panel id="LocalTeamOverlay" />
 			<Panel hittest="false" id="PlayersContainer"/>
 			<Panel hittest="false" id="TeamOverlayBar">
-				<Panel hittest="false" id="TeamDarkenWash" />
 				<Panel hittest="false" id="LogoAndScore">
 					<Panel hittest="false" id="TeamLogo" />
-					<Label hittest="false" id="TeamScore" text="999"/>
 				</Panel>
 			</Panel>
 		</Panel>

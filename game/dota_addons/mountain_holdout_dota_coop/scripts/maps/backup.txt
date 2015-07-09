@@ -1,0 +1,253 @@
+"Round12" // AA, MiniLich, Fodder
+	{
+		"round_quest_title"			"#DOTA_Holdout_Round_StayFrosty_Quest_Title"
+		"round_title"				"#DOTA_Holdout_Round_StayFrosty_Title"
+		"MaxGold"					"15000"
+		"BagCount"					"55"
+		"BagVariance"				"30"
+		"FixedXP"					"25000"
+		
+		// Stage 1 ================================================
+		"UnitHarrass_1"
+		{			
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_ancient_apparition"
+			"TotalUnitsToSpawn"		"9"
+			"UnitsPerSpawn"			"3"
+			"SpawnInterval"			"25"
+			"DontGiveGoal"			"1"
+		}
+		
+		"UnitMelee_1"
+		{
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"8"
+			"SpawnInterval"			"15"
+		}
+		
+		"UnitAreaEffect_1"
+		{
+			"GroupWithUnit"			"UnitMelee_1"
+			
+			"NPCName"				"npc_dota_creature_minor_lich"
+			"TotalUnitsToSpawn"		"6"
+			"UnitsPerSpawn"			"2"
+		}
+		
+		// Stage 2 ================================================
+		"UnitMelee_2"
+		{
+			"WaitForUnit"			"UnitMelee_1"
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"12"
+		}
+		
+		// Stage 3 ================================================
+		"UnitMelee_3a"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"12"
+			"UnitsPerSpawn"			"4"
+			"SpawnInterval"			"30"
+		}
+		
+		"UnitAreaEffect_3a"
+		{
+			"GroupWithUnit"			"UnitMelee_3a"
+			
+			"NPCName"				"npc_dota_creature_minor_lich"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+		}
+		
+		"UnitMelee_3b"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"16"
+			"UnitsPerSpawn"			"8"
+			"SpawnInterval"			"30"
+		}
+		
+		"UnitAreaEffect_3b"
+		{
+			"GroupWithUnit"			"UnitMelee_3b"
+			
+			"NPCName"				"npc_dota_creature_minor_lich"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+		}
+		
+		"UnitMelee_3c"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"16"
+			"UnitsPerSpawn"			"8"
+			"SpawnInterval"			"30"
+		}
+		
+		"UnitAreaEffect_3c"
+		{
+			"GroupWithUnit"			"UnitMelee_3c"
+			
+			"NPCName"				"npc_dota_creature_minor_lich"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+		}
+		
+		"UnitMelee_3d"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"16"
+			"UnitsPerSpawn"			"8"
+			"SpawnInterval"			"30"
+		}
+		
+		"UnitAreaEffect_3d"
+		{
+			"GroupWithUnit"			"UnitMelee_3d"
+			
+			"NPCName"				"npc_dota_creature_minor_lich"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+		}
+
+		// Stage 1 ================================================
+		"UnitHarrass_1_"
+		{			
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_ancient_apparition"
+			"TotalUnitsToSpawn"		"9"
+			"UnitsPerSpawn"			"3"
+			"SpawnInterval"			"25"
+			"DontGiveGoal"			"1"
+		}
+		
+		"UnitMelee_1_"
+		{
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"8"
+			"SpawnInterval"			"15"
+		}
+		
+		"UnitAreaEffect_1_"
+		{
+			"GroupWithUnit"			"UnitMelee_1"
+			
+			"NPCName"				"npc_dota_creature_minor_lich"
+			"TotalUnitsToSpawn"		"6"
+			"UnitsPerSpawn"			"2"
+		}
+		
+		// Stage 2 ================================================
+		"UnitMelee_2_"
+		{
+			"WaitForUnit"			"UnitMelee_1"
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"12"
+		}
+		
+		// Stage 3 ================================================
+		"UnitMelee_3a_"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"12"
+			"UnitsPerSpawn"			"4"
+			"SpawnInterval"			"30"
+		}
+		
+		"UnitAreaEffect_3a_"
+		{
+			"GroupWithUnit"			"UnitMelee_3a"
+			
+			"NPCName"				"npc_dota_creature_minor_lich"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+		}
+		
+		"UnitMelee_3b_"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"16"
+			"UnitsPerSpawn"			"8"
+			"SpawnInterval"			"30"
+		}
+		
+		"UnitAreaEffect_3b_"
+		{
+			"GroupWithUnit"			"UnitMelee_3b"
+			
+			"NPCName"				"npc_dota_creature_minor_lich"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+		}
+		
+		"UnitMelee_3c_"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"16"
+			"UnitsPerSpawn"			"8"
+			"SpawnInterval"			"30"
+		}
+		
+		"UnitAreaEffect_3c_"
+		{
+			"GroupWithUnit"			"UnitMelee_3c"
+			
+			"NPCName"				"npc_dota_creature_minor_lich"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+		}
+		
+		"UnitMelee_3d_"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"20"
+			
+			"NPCName"				"npc_dota_creature_snow_creep_melee"
+			"TotalUnitsToSpawn"		"16"
+			"UnitsPerSpawn"			"8"
+			"SpawnInterval"			"30"
+		}
+		
+		"UnitAreaEffect_3d_"
+		{
+			"GroupWithUnit"			"UnitMelee_3d"
+			
+			"NPCName"				"npc_dota_creature_minor_lich"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+		}
+	}

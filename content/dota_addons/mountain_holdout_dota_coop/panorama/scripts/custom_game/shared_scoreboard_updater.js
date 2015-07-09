@@ -111,41 +111,6 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 			}
 		}
 	}
-	
-	var playerItemsContainer = playerPanel.FindChildInLayoutFile( "PlayerItemsContainer" );
-	if ( playerItemsContainer )
-	{
-		var playerItems = Game.GetPlayerItems( playerId );
-		if ( playerItems )
-		{
-	//		$.Msg( "playerItems = ", playerItems );
-			for ( var i = playerItems.inventory_slot_min; i < playerItems.inventory_slot_max; ++i )
-			{
-				var itemPanelName = "_dynamic_item_" + i;
-				var itemPanel = playerItemsContainer.FindChild( itemPanelName );
-				if ( itemPanel === null )
-				{
-					itemPanel = $.CreatePanel( "Image", playerItemsContainer, itemPanelName );
-					itemPanel.AddClass( "PlayerItem" );
-				}
-
-				var itemInfo = playerItems.inventory[i];
-				if ( itemInfo )
-				{
-					var item_image_name = "file://{images}/items/" + itemInfo.item_name.replace( "item_", "" ) + ".png"
-					if ( itemInfo.item_name.indexOf( "recipe" ) >= 0 )
-					{
-						item_image_name = "file://{images}/items/recipe.png"
-					}
-					itemPanel.SetImage( item_image_name );
-				}
-				else
-				{
-					itemPanel.SetImage( "" );
-				}
-			}
-		}
-	}
 
 	if ( isTeammate )
 	{

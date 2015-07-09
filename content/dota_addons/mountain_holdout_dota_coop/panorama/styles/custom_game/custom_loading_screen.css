@@ -19,7 +19,7 @@
   pre-transform-scale2d: 1.0;
   animation-name: name_anim;
   animation-delay: 0s;
-  animation-duration: 40s;
+  animation-duration: 60s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
 }
@@ -34,14 +34,14 @@
 {
   0%
   {
-    transform: translateX( 0px ) translateY( 0px );
+    transform: translateX( 0px ) translateY( -200px );
 	opacity: 0;
-    pre-transform-scale2d: .5;
+    pre-transform-scale2d: .4;
   }
 
   10%
   {
-    transform: translateX( 0px ) translateY( 0px );
+    transform: translateX( 0px ) translateY( -200px );
 	opacity: 0;
     pre-transform-scale2d: .4;
   }
@@ -54,7 +54,7 @@
 
   100%
   {
-    transform: translateX( 0px ) translateY( -200px );
+    transform: translateX( 0px ) translateY( 0px );
 	opacity: 1;
 	pre-transform-scale2d: 1;
   }
