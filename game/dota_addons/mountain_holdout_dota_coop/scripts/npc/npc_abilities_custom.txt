@@ -4923,7 +4923,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"1000 1000 1000 1000"
+				"radius"					"600 600 600 600"
 			}
 			"02"
 			{
@@ -10136,12 +10136,12 @@
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"flesh_heap_strength_buff_amount"	"0.05 0.05 0.075 0.075"
+				"flesh_heap_strength_buff_amount"	"0.05 0.05 0.05 0.05"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"flesh_heap_range"		"250"
+				"flesh_heap_range"		"200"
 			}
 		}
 
