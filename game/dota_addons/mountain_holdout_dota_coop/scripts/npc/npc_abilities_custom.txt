@@ -4,6 +4,290 @@
 {
 	"Version"		"1"
 
+
+	//=================================================================================================================
+	// 2 - Werewolf Shapeshift
+	//=================================================================================================================
+	"werewolf_shapeshift"
+	{
+		"BaseClass"						"lycan_shapeshift"
+		"AbilityName"					"werewolf_shapeshift"
+		"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"               		"1"
+
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"60"
+
+		"precache"
+		{
+			"particle_folder"				"particles/units/heroes/hero_lycan"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"15.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed"						"550"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"transformation_time"		"1.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// 3 - Lil Pudge Rot
+	//=================================================================================================================
+	"lilpudge_rot"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityName"					"lilpudge_rot"
+		"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName" 			"pudge_rot"
+		"MaxLevel"               		"1"
+
+		"precache"
+		{
+			"particle_folder"				"particles/units/heroes/hero_pudge"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"rot_tick"					"0.4"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rot_slow"					"-20"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rot_dps"					"5"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rot_damage"				"2"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_lilrot"
+			{
+				"IsHidden" "0"
+    			"IsBuff" "1"
+    			"Passive" "1"
+
+				"ThinkInterval"	"%rot_tick"
+
+				"OnIntervalThink"
+				{
+
+					"Damage"
+					{
+						"Target"	"CASTER"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%rot_damage"
+					}
+
+					"ActOnTargets"
+					{
+						"Target"
+			            {
+			                "Center" "CASTER"
+			                "Radius" "%radius"
+			                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" 
+			                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+			            }
+
+			            "Action"
+			            {
+			            	"Damage"
+			            	{
+			            		"Target"	"TARGET"
+			            		"Type"		"DAMAGE_TYPE_MAGICAL"
+			            		"Damage"	"%rot_damage"
+			            	}
+			            }
+					}
+				}
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/econ/courier/courier_minipudge/courier_minipudge_rot_swirl.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+							"01"	"%radius 0 0"
+						}
+					}
+				}
+
+				"Aura" 			"modifier_lilrot_slow"
+				"Aura_Radius" 	"%radius"
+				"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+
+			"modifier_lilrot_slow"
+			{		
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%rot_slow"
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// 3 - Big Pudge Rot
+	//=================================================================================================================
+	"bigpudge_rot"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityName"					"bigpudge_rot"
+		"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName" 			"pudge_rot"
+		"MaxLevel"               		"1"
+
+		"precache"
+		{
+			"particle_folder"				"particles/units/heroes/hero_pudge"
+		}
+
+		"Modifiers"
+		{
+			"modifier_bigrot"
+			{
+				"IsHidden" "0"
+    			"IsBuff" "1"
+    			"Passive" "1"
+
+				"ThinkInterval"	"%rot_tick"
+
+				"OnIntervalThink"
+				{
+
+					"Damage"
+					{
+						"Target"	"CASTER"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%rot_damage"
+					}
+
+					"ActOnTargets"
+					{
+						"Target"
+			            {
+			                "Center" "CASTER"
+			                "Radius" "%radius"
+			                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" 
+			                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+			            }
+
+			            "Action"
+			            {
+			            	"Damage"
+			            	{
+			            		"Target"	"TARGET"
+			            		"Type"		"DAMAGE_TYPE_MAGICAL"
+			            		"Damage"	"%rot_damage"
+			            	}
+			            }
+					}
+				}
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/econ/courier/courier_minipudge/courier_minipudge_rot_swirl.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+							"01"	"%radius 0 0"
+						}
+					}
+				}
+
+				"Aura" 			"modifier_bigrot_slow"
+				"Aura_Radius" 	"%radius"
+				"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+
+			"modifier_bigrot_slow"
+			{		
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%rot_slow"
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"800"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"rot_tick"					"0.2"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rot_slow"					"-10"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rot_dps"					"25"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rot_damage"				"5"
+			}
+		}
+	}
+
+
 	//=================================================================================================================
 	// Lesser Nightcrawler: Pounce
 	//=================================================================================================================

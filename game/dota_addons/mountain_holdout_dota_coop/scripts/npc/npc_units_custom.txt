@@ -434,7 +434,7 @@
 
 			"AttachWearables"
 			{
-				"Wearable4"		{	"ItemDef"	"66"	}
+				"Wearable1"		{	"ItemDef"	"66"	}
 			}
 		}
 	}
@@ -459,10 +459,10 @@
 
 		// Armor 			----------------------------------------------------------------
 		"ArmorPhysical"				"1"
-		"MagicalResistance"     	"10"
+		"MagicalResistance"     	"30"
 
 		// Attack 			----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"30"
 		"AttackDamageMax"			"33"	
 		"AttackRate"				"1.6"
@@ -488,7 +488,7 @@
 		"MovementSpeed"				"270"
 
 		// Status 			----------------------------------------------------------------
-		"StatusHealth"				"150"
+		"StatusHealth"				"80"
 		"StatusHealthRegen"			"8"
 		"StatusMana"				"0"
 		"StatusManaRegen"			"0.0" 
@@ -520,388 +520,369 @@
 			{
 				"Wearable1"		{	"ItemDef"	"77"	}
 				"Wearable2"		{	"ItemDef"	"79"	}
-				"Wearable1"		{	"ItemDef"	"267"	}
+				"Wearable3"		{	"ItemDef"	"267"	}
 			}
 		}
 	}
 	
+	//=================================================================================	
+	// 2 - Wolf
 	//=================================================================================
-	// Creature: Basic Zombie
-	//=================================================================================
-	"npc_dota_creature_basic_zombie"
-	{
-		// General
-		//
-		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/heroes/undying/undying_minion.vmdl"	// Model.
-		"SoundSet"					"Undying_Zombie"					// Name of sound set.
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
-		"ModelScale"				".8"
-		"Level"						"1"
-				
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
+	"npc_2_wolf"
+	{										
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/lycan/summon_wolves.mdl"
+		"SoundSet"					"Lycan_Wolf"
+		"GameSoundsFile"			""
+		"Level"						"2"
+		"ModelScale" 				"1"
 
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"3"			// Physical protection.
-		"MagicalResistance"			"33"		// Magical protection.
+		// Abilities 		----------------------------------------------------------------
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
 
-		// Attack
-		//----------------------------------------------------------------
+		// Armor 			----------------------------------------------------------------
+		"ArmorPhysical"				"2"
+		"MagicalResistance"     	"10"
+
+		// Attack 			----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"30"		// Damage range min.
-		"AttackDamageMax"			"30"		// Damage range max.
-		"AttackRate"				"1.5"		// Speed of attack.
-		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-		"AttackRange"				"128"		// Range within a target can be attacked.
-		"ProjectileModel"			""			// Particle system model for projectile.
-		"ProjectileSpeed"			""			// Speed of projectile.
+		"AttackDamageMin"			"15"
+		"AttackDamageMax"			"18"	
+		"AttackRate"				"2"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"128"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			""   
 
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"35"	// Experience earn.
-		"BountyGoldMin"				"0"		// Gold earned min.
-		"BountyGoldMax"				"0"		// Gold earned max.
+		// Bounds 			----------------------------------------------------------------
+		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
+		"RingRadius"				"40"
+		"HealthBarOffset"			"150"
+		"ConsideredHero" 			"0"
 
-		// Bounds
-		//----------------------------------------------------------------
+		// Bounty 			----------------------------------------------------------------
+		"BountyXP"					"13"
+		"BountyGoldMin"				"0"	
+		"BountyGoldMax"				"0"
+
+		// Movement 		----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"450"
+
+		// Status 			----------------------------------------------------------------
+		"StatusHealth"				"150"
+		"StatusHealthRegen"			"3"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0.0" 
+		
+		// Vision 			----------------------------------------------------------------
+		"VisionDaytimeRange"		"600"
+		"VisionNighttimeRange"		"600"
+
+		// Team 			----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Creature Data 	----------------------------------------------------------------
+		"Creature"
+		{
+			"DisableResistance"            "0.0"
+		}
+	}
+
+	//=================================================================================
+	// 2 - Werewolf
+	//=================================================================================
+	"npc_2_werewolf"
+	{										
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/lycan/lycan.vmdl"
+		"SoundSet"					"Hero_Lycan"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts"
+		"Level"						"2"
+		"ModelScale" 				"0.9"
+
+		// Abilities 		----------------------------------------------------------------
+		"Ability1"					"werewolf_shapeshift"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		// Armor 			----------------------------------------------------------------
+		"ArmorPhysical"				"5"
+		"MagicalResistance"     	"20"
+
+		// Attack 			----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"70"
+		"AttackDamageMax"			"75"	
+		"AttackRate"				"1.2"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"128"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			""   
+
+		// Bounds 			----------------------------------------------------------------
+		"BoundsHullName"            "DOTA_HULL_SIZE_HERO"
 		"RingRadius"				"70"
 		"HealthBarOffset"			"160"
-		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"	
+		"ConsideredHero" 			"0"
 
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"200"		// Speed
-		"MovementTurnRate"			"0.5"		// Turning rate.
+		// Bounty 			----------------------------------------------------------------
+		"BountyXP"					"22"
+		"BountyGoldMin"				"0"	
+		"BountyGoldMax"				"0"
 
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"350"		// Base health.
-		"StatusHealthRegen"			"0.25"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"			// Mana regeneration rate.
+		// Movement 		----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"450"
 
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+		// Status 			----------------------------------------------------------------
+		"StatusHealth"				"400"
+		"StatusHealthRegen"			"5"
+		"StatusMana"				"61"
+		"StatusManaRegen"			"1" 
+		
+		// Vision 			----------------------------------------------------------------
+		"VisionDaytimeRange"		"1000"
+		"VisionNighttimeRange"		"1000"
+
+		// Team 			----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
-		
-		// Creature Data
-		//----------------------------------------------------------------------------------------------------------------------
-		"Creature"
-		{
-			"CanRespawn"				"0"
-			
-			//Basic AI State
-			//-----------------------------------------------------------------
-			"DefaultState"				"Invade"
-			
-			"States"
-			{
-				"Invade"
-				{
-					"Name"				"Invade"
-					"Aggression"		"100.0"
-					"Avoidance"			"0.0"
-					"Support"			"0.0"
-				}
-			}
 
-			//Level Up Parameters
-			//-----------------------------------------------------------------
-			"HPGain"					"40"
-			"DamageGain"				"10"
-			"ArmorGain"					"1"
-			"MagicResistGain"			"1"
-			"MoveSpeedGain"				"1"
-			"BountyGain"				"5"
-			"XPGain"					"20"
-
-			//Ability Usage Parameters
-			//-----------------------------------------------------------------
-		}
-	}
-
-	//=================================================================================
-	// Creature: Basic Zombie Exploding
-	//=================================================================================
-	"npc_dota_creature_basic_zombie_exploding"
-	{
-		// General
-		//
-		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/heroes/undying/undying_minion.vmdl"	// Model.
-		"SoundSet"					"Undying_Zombie"					// Name of sound set.
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
-		"ModelScale"				"1.18"
-		"Level"						"1"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		
-		"Ability1"					"creature_acid_spray"			// Ability 1.
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"3"			// Physical protection.
-		"MagicalResistance"			"33"		// Magical protection.
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"37"		// Damage range min.
-		"AttackDamageMax"			"45"		// Damage range max.
-		"AttackRate"				"1.6"		// Speed of attack.
-		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-		"AttackRange"				"128"		// Range within a target can be attacked.
-		"ProjectileModel"			""			// Particle system model for projectile.
-		"ProjectileSpeed"			""			// Speed of projectile.
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"35"	// Experience earn.
-		"BountyGoldMin"				"0"		// Gold earned min.
-		"BountyGoldMax"				"0"		// Gold earned max.
-
-		// Bounds
-		//----------------------------------------------------------------
-		"RingRadius"				"70"
-		"HealthBarOffset"			"200"
-		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"	
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"180"		// Speed
-		"MovementTurnRate"			"0.5"		// Turning rate.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"360"		// Base health.
-		"StatusHealthRegen"			"0.25"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"			// Mana regeneration rate.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
-
-		// Creature Data
-		//----------------------------------------------------------------------------------------------------------------------
-		"Creature"
-		{	
-			//Basic AI State
-			//-----------------------------------------------------------------
-			"DefaultState"				"Invade"
-			
-			"States"
-			{
-				"Invade"
-				{
-					"Name"				"Invade"
-					"Aggression"		"100.0"
-					"Avoidance"			"0.0"
-					"Support"			"0.0"
-				}
-			}
-
-			//Level Up Parameters
-			//-----------------------------------------------------------------
-			"HPGain"					"40"
-			"DamageGain"				"10"
-			"ArmorGain"					"1"
-			"MagicResistGain"			"1"
-			"MoveSpeedGain"				"1"
-			"BountyGain"				"5"
-			"XPGain"					"20"
-		}
-	}
-
-
-	//=================================================================================
-	// Creature: Corpselord
-	//=================================================================================
-	"npc_dota_creature_corpselord"
-	{
-		// General
-		//
-		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/heroes/undying/undying.vmdl"	// Model.
-		"SoundSet"					"Undying_Zombie"					// Name of sound set.
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
-		"ModelScale"				"1.12"
-		"Level"						"1"
-		"ConsideredHero"			"1"
+		// precache 		----------------------------------------------------------------
 		"precache"
 		{
-			"particle_folder"		"particles/units/heroes/hero_undying"
+			"model"					"models/heroes/lycan/lycan_head.mdl"
+			"model"					"models/items/lycan/clawsy_greatg/clawsy_greatg.mdl"
+			"model"					"models/items/lycan/ultimate/ambry_true_form/ambry_true_form.mdl"
 		}
-		// Abilities
-		//----------------------------------------------------------------
 		
-		"Ability1"					"creature_summon_undead"			// Ability 1.
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"			"33"		// Magical protection.
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"40"		// Damage range min.
-		"AttackDamageMax"			"70"		// Damage range max.
-		"AttackRate"				"1.5"		// Speed of attack.
-		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-		"AttackRange"				"128"		// Range within a target can be attacked.
-		"ProjectileModel"			""			// Particle system model for projectile.
-		"ProjectileSpeed"			""			// Speed of projectile.
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"25"		// Experience earn.
-		"BountyGoldMin"				"0"			// Gold earned min.
-		"BountyGoldMax"				"0"			// Gold earned max.
-
-		// Bounds
-		//----------------------------------------------------------------
-		"RingRadius"				"75"
-		"HealthBarOffset"			"235"
-		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"	
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"200"		// Speed
-		"MovementTurnRate"			"0.5"		// Turning rate.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"1"			// Health regeneration rate.
-		"StatusMana"				"200"		// Base mana.
-		"StatusManaRegen"			"5"			// Mana regeneration rate.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
-
-		// Creature Data
-		//----------------------------------------------------------------------------------------------------------------------
+		// Creature Data 	----------------------------------------------------------------
 		"Creature"
 		{
-			"CanRespawn"				"0"
-			
-			//Basic AI State
-			//-----------------------------------------------------------------
+			"DisableResistance"            "20.0"
+
 			"DefaultState"				"Invade"
 			"States"
 			{
 				"Invade"
 				{
 					"Name"				"Invade"
-					"Aggression"		"100.0"
+					"Aggression"		"75.0"
 					"Avoidance"			"0.0"
-					"Support"			"35.0"
+					"Support"			"0.0"
 				}
 			}
 
-			//Level Up Parameters
-			//-----------------------------------------------------------------
-			"HPGain"					"75"
-			"DamageGain"				"5"
-			"ArmorGain"					"0.25"
-			"MagicResistGain"			"0.1"
-			"MoveSpeedGain"				"1"
-			"BountyGain"				"3"
-			"XPGain"					"13"
-
-			//Ability Usage Parameters
-			//-----------------------------------------------------------------
-			"DefensiveAbilities"
+			"OffensiveAbilities"
 			{
 				"Ability1"
 				{
-					"Name"				"creature_summon_undead"
-					"Heal"				"1"
-					"AOE"				"1"
-					"Radius"			"650"
-					"MinimumTargets"	"3"
+					"Name"				"werewolf_shapeshift"
+
 				}
 			}
-			
+
 			"AttachWearables"
 			{
-				"Wearable1"
-				{
-					"ItemDef"			"391"
-				}
-				"Wearable2"
-				{
-					"ItemDef"			"392"
-				}
-				"Wearable3"
-				{
-					"ItemDef"			"393"
-				}
-				"Wearable4"
-				{
-					"ItemDef"			"394"
-				}
+				"Wearable1"		{	"ItemDef"	"207"	}
+				"Wearable2"		{	"ItemDef"	"4976"	}
+				"Wearable3"		{	"ItemDef"	"7905"	}
 			}
 		}
 	}
-	
+
+	//=================================================================================
+	// 3 - Lil Pudge
+	//=================================================================================
+	"npc_3_lilpudge"
+	{										
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/pudge/pudge.vmdl"
+		"SoundSet"					"Hero_Pudge"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+		"Level"						"3"
+		"ModelScale" 				"0.7"
+
+		// Abilities 		----------------------------------------------------------------
+		"Ability1"					"lilpudge_rot"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		// Armor 			----------------------------------------------------------------
+		"ArmorPhysical"				"10"
+		"MagicalResistance"     	"40"
+
+		// Attack 			----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"18"
+		"AttackDamageMax"			"23"	
+		"AttackRate"				"0.9"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"128"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			""   
+
+		// Bounds 			----------------------------------------------------------------
+		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
+		"RingRadius"				"40"
+		"HealthBarOffset"			"140"
+		"ConsideredHero" 			"0"
+
+		// Bounty 			----------------------------------------------------------------
+		"BountyXP"					"14"
+		"BountyGoldMin"				"0"	
+		"BountyGoldMax"				"0"
+
+		// Movement 		----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"220"
+
+		// Status 			----------------------------------------------------------------
+		"StatusHealth"				"800"
+		"StatusHealthRegen"			"3"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0" 
+		
+		// Vision 			----------------------------------------------------------------
+		"VisionDaytimeRange"		"600"
+		"VisionNighttimeRange"		"600"
+
+		// Team 			----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		// precache 		----------------------------------------------------------------
+		"precache"
+		{
+			"model"					"models/heroes/pudge/righthook.mdl"
+			"model"					"models/heroes/pudge/leftweapon.mdl"
+			"model"					"models/heroes/pudge/leftarm.mdl"
+			"model"					"particles/units/heroes/hero_pudge.pcf"
+		}
+		
+		// Creature Data 	----------------------------------------------------------------
+		"Creature"
+		{
+			"DisableResistance"            "0.0"
+
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"47"	}
+				"Wearable1"		{	"ItemDef"	"259"	}
+				"Wearable1"		{	"ItemDef"	"260"	}
+				"Wearable1"		{	"ItemDef"	"391"	}
+			}
+		}
+	}
+
+	//=================================================================================
+	// 3 - Big Pudge
+	//=================================================================================
+	"npc_3_bigpudge"
+	{										
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/pudge/pudge.vmdl"
+		"SoundSet"					"Hero_Pudge"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+		"Level"						"3"
+		"ModelScale" 				"1.5"
+
+		// Abilities 		----------------------------------------------------------------
+		"Ability1"					"bigpudge_rot"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		// Armor 			----------------------------------------------------------------
+		"ArmorPhysical"				"0"
+		"MagicalResistance"     	"0"
+
+		// Attack 			----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"29"
+		"AttackDamageMax"			"33"	
+		"AttackRate"				"1.1"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"128"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			""   
+
+		// Bounds 			----------------------------------------------------------------
+		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
+		"RingRadius"				"40"
+		"HealthBarOffset"			"200"
+		"ConsideredHero" 			"0"
+
+		// Bounty 			----------------------------------------------------------------
+		"BountyXP"					"14"
+		"BountyGoldMin"				"0"	
+		"BountyGoldMax"				"0"
+
+		// Movement 		----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"220"
+
+		// Status 			----------------------------------------------------------------
+		"StatusHealth"				"7500"
+		"StatusHealthRegen"			"15"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0" 
+		
+		// Vision 			----------------------------------------------------------------
+		"VisionDaytimeRange"		"600"
+		"VisionNighttimeRange"		"600"
+
+		// Team 			----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		// precache 		----------------------------------------------------------------
+		"precache"
+		{
+			"model"					"models/items/pudge/plague_doctor_shoulder/plague_doctor_shoulder.mdl"
+			"model"					"models/items/pudge/plague_doctor_back/plague_doctor_back.mdl"
+			"model"					"models/items/pudge/plague_doctor_arms/plague_doctor_arms.mdl"
+			"model"					"models/items/pudge/plague_doctor_head/plague_doctor_head.mdl"
+			"model"					"models/items/pudge/plague_doctor_weapon/plague_doctor_weapon.mdl"
+			"model"					"models/items/pudge/plague_doctor_offhand/plague_doctor_offhand.mdl"
+		}
+		
+		// Creature Data 	----------------------------------------------------------------
+		"Creature"
+		{
+			"DisableResistance"            "0.0"
+
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"7541"	}
+				"Wearable2"		{	"ItemDef"	"7542"	}
+				"Wearable3"		{	"ItemDef"	"7544"	}
+				"Wearable4"		{	"ItemDef"	"7545"	}
+				"Wearable5"		{	"ItemDef"	"7546"	}
+				"Wearable6"		{	"ItemDef"	"7547"	}
+			}
+		}
+	}
+
 
 	//=================================================================================
 	// Creature: Lesser Nightcrawler

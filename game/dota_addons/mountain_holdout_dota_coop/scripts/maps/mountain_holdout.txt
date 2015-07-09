@@ -101,17 +101,18 @@
 		}
 	}
 	
-	"Round1" // Kobolds
+	"Round1" // Swordsmen & Rangers
 	{
-		"round_quest_title"			"#DOTA_Holdout_Round_Kobolds_Quest_Title"
-		"round_title"				"#DOTA_Holdout_Round_Kobolds_Title"
+		"round_quest_title"			"#DOTA_Holdout_Round_Swordsmen_Quest_Title"
+		"round_title"				"#DOTA_Holdout_Round_Swordsmen_Title"
+
 		"MaxGold"					"1000"
-		"BagCount"					"50"
-		"BagVariance"				"30"
-		"FixedXP"					"12500"
+		"BagCount"					"0"
+		"BagVariance"				"0"
+		"FixedXP"					"10500"
 		
 		// Stage 1 ================================================
-		"UnitFodder_1a" // Duration 80s - Continues with UnitFodderGrouped_2a & 3a to 120s total
+		"UnitSword_1a"
 		{
 			"NPCName"				"npc_1_swordsman"
 			"TotalUnitsToSpawn"		"32"
@@ -119,7 +120,7 @@
 			"SpawnInterval"			"10"
 		}
 		
-		"UnitFodder_1b" // Duration 80s - Continues with UnitFodderGrouped_2b & 3b to 120s total
+		"UnitSword_1b"
 		{
 			"NPCName"				"npc_1_swordsman"
 			"TotalUnitsToSpawn"		"32"
@@ -127,27 +128,30 @@
 			"SpawnInterval"			"10"
 		}
 		
-		"UnitFodder_1c" // Duration 90s + 30s
+		"UnitSword_1c"
 		{
 			"WaitForTime"			"30"
+
 			"NPCName"				"npc_1_swordsman"
 			"TotalUnitsToSpawn"		"20"
 			"UnitsPerSpawn"			"5"
 			"SpawnInterval"			"10"
 		}
 		
-		"UnitRanged_1a" // Duration 60s + 30s
+		"UnitRanger_1a"
 		{
 			"WaitForTime"			"30"
+
 			"NPCName"				"npc_1_ranger"
 			"TotalUnitsToSpawn"		"16"
 			"UnitsPerSpawn"			"4"
 			"SpawnInterval"			"15"
 		}
 		
-		"UnitRanged_1b" // Duration 60s + 30s
+		"UnitRanger_1b"
 		{
 			"WaitForTime"			"30"
+
 			"NPCName"				"npc_1_ranger"
 			"TotalUnitsToSpawn"		"16"
 			"UnitsPerSpawn"			"4"
@@ -155,9 +159,9 @@
 		}
 		
 		// Stage 2 ================================================
-		"UnitFodderGrouped_2a" // Duration 20s
+		"UnitSwordGrouped_2a"
 		{
-			"WaitForUnit"			"UnitFodder_1a"
+			"WaitForUnit"			"UnitSword_1a"
 			"WaitForTime"			"12"
 			
 			"NPCName"				"npc_1_swordsman"
@@ -166,9 +170,9 @@
 			"SpawnInterval"			"10"
 		}
 		
-		"UnitFodderGrouped_2b" // Duration 20s
+		"UnitSwordGrouped_2b"
 		{
-			"WaitForUnit"			"UnitFodder_1b"
+			"WaitForUnit"			"UnitSword_1b"
 			"WaitForTime"			"12"
 			
 			"NPCName"				"npc_1_swordsman"
@@ -177,9 +181,9 @@
 			"SpawnInterval"			"10"
 		}
 		
-		"UnitHealer_2a"
+		"UnitRangerGrouped_2a"
 		{
-			"GroupWithUnit"			"UnitFodderGrouped_2a"
+			"GroupWithUnit"			"UnitSwordGrouped_2a"
 			
 			"NPCName"				"npc_1_ranger"
 			"TotalUnitsToSpawn"		"24"
@@ -187,9 +191,9 @@
 			"SpawnInterval"			"10"
 		}
 		
-		"UnitHealer_2b"
+		"UnitRangerGrouped_2b"
 		{
-			"GroupWithUnit"			"UnitFodderGrouped_2b"
+			"GroupWithUnit"			"UnitSwordGrouped_2b"
 			
 			"NPCName"				"npc_1_ranger"
 			"TotalUnitsToSpawn"		"24"
@@ -199,9 +203,9 @@
 		
 		
 		// Stage 3 ================================================
-		"UnitFodderGrouped_3a" // Duration 20s
+		"UnitSwordGrouped_3a"
 		{
-			"WaitForUnit"			"UnitFodderGrouped_2a"
+			"WaitForUnit"			"UnitSwordGrouped_2a"
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_1_swordsman"
@@ -210,9 +214,9 @@
 			"SpawnInterval"			"10"
 		}
 		
-		"UnitFodderGrouped_3b" // Duration 20s
+		"UnitSwordGrouped_3b"
 		{
-			"WaitForUnit"			"UnitFodderGrouped_2b"
+			"WaitForUnit"			"UnitSwordGrouped_2b"
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_1_swordsman"
@@ -221,9 +225,9 @@
 			"SpawnInterval"			"10"
 		}
 		
-		"UnitHealer_3a"
+		"UnitRanger_3a"
 		{
-			"GroupWithUnit"			"UnitFodderGrouped_3a"
+			"GroupWithUnit"			"UnitSwordGrouped_3a"
 			
 			"NPCName"				"npc_1_ranger"
 			"TotalUnitsToSpawn"		"32"
@@ -231,9 +235,9 @@
 			"SpawnInterval"			"10"
 		}
 		
-		"UnitHealer_3b"
+		"UnitRanger_3b"
 		{
-			"GroupWithUnit"			"UnitFodderGrouped_3b"
+			"GroupWithUnit"			"UnitSwordGrouped_3b"
 			
 			"NPCName"				"npc_1_ranger"
 			"TotalUnitsToSpawn"		"32"
@@ -242,332 +246,293 @@
 		}
 	}
 	
-	"Round2" // Corpselords, Volatile Zombies
+	"Round2" // Wolves
 	{
-		"round_quest_title"			"#DOTA_Holdout_Round_Zombies_Quest_Title"
-		"round_title"				"#DOTA_Holdout_Round_Zombies_Title"
+		"round_quest_title"			"#DOTA_Holdout_Round_Wolves_Quest_Title"
+		"round_title"				"#DOTA_Holdout_Round_Wolves_Title"
+
 		"MaxGold"					"1200"
-		"BagCount"					"40"
-		"BagVariance"				"10"
-		"FixedXP"					"7500"
+		"BagCount"					"0"
+		"BagVariance"				"0"
+		"FixedXP"					"10500"
 		
 		// Stage 1 ================================================
-		"UnitZombie_1a"
+		"UnitWolf_1a"
 		{
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"36"
+			"NPCName"				"npc_2_wolf"
+			"TotalUnitsToSpawn"		"16"
 			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 		}
 		
-		"UnitZombieExploding"
+		"UnitWere_1b"
 		{
-			"GroupWithUnit"			"UnitZombie_1a"
+			"GroupWithUnit"			"UnitWolf_1a"
 			
-			"NPCName"				"npc_dota_creature_basic_zombie_exploding"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
+			"NPCName"				"npc_2_werewolf"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"1"
 		}
 		
 		"UnitZombie_1b"
 		{
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"36"
+			"NPCName"				"npc_2_wolf"
+			"TotalUnitsToSpawn"		"16"
+			"UnitsPerSpawn"			"8"
+			"SpawnInterval"			"8"
+		}
+		
+		"UnitWere_2b"
+		{
+			"GroupWithUnit"			"UnitWolf_1b"
+			
+			"NPCName"				"npc_2_werewolf"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"1"
+		}
+		
+		// Stage 2 ================================================
+		"UnitWolf_2a"
+		{
+			"WaitForUnit"			"UnitWolf_1a"
+			"WaitForTime"			"15"
+			
+			"NPCName"				"npc_2_wolf"
+			"TotalUnitsToSpawn"		"12"
 			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"8"
 		}
 		
-		"UnitZombieExploding"
+		"UnitWere_2a"
 		{
-			"GroupWithUnit"			"UnitZombie_1b"
 			
-			"NPCName"				"npc_dota_creature_basic_zombie_exploding"
+			"NPCName"				"npc_2_werewolf"
 			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
-		}
-		
-		// Stage 2 ================================================
-		"UnitZombie_2a"
-		{
-			"WaitForUnit"			"UnitZombie_1a"
-			"WaitForTime"			"15"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"48"
-			"UnitsPerSpawn"			"16"
-			"SpawnInterval"			"8"
-		}
-		
-		"UnitZombieCorpseLord_2a"
-		{
-			"GroupWithUnit"			"UnitZombie_2a"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
-		}
-		
-		"UnitZombieExploding_2a"
-		{
-			"GroupWithUnit"			"UnitZombie_2a"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie_exploding"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
+			"UnitsPerSpawn"			"3"
 		}
 		
 		// Stage 3 ================================================
 
-		"UnitZombie_3a"
+		"UnitWolf_3a"
 		{
-			"WaitForUnit"			"UnitZombie_2a"
-			"WaitForTime"			"10"
+			"WaitForUnit"			"UnitWolf_2a"
+			"WaitForTime"			"30"
 			
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"48"
+			"NPCName"				"npc_2_wolf"
+			"TotalUnitsToSpawn"		"32"
 			"UnitsPerSpawn"			"16"
 			"SpawnInterval"			"6"
 		}
 		
-		"UnitZombie_3b"
+		"UnitWolf_3b"
 		{
-			"WaitForUnit"			"UnitZombie_2a"			
-			"WaitForTime"			"10"
+			"WaitForUnit"			"UnitWolf_2a"			
+			"WaitForTime"			"30"
 			
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"48"
+			"NPCName"				"npc_2_wolf"
+			"TotalUnitsToSpawn"		"32"
 			"UnitsPerSpawn"			"16"
 			"SpawnInterval"			"6"
 		}
 		
 		// Stage 5 ================================================
-		"UnitZombie_5a"
+		"UnitWolf_5a"
 		{
-			"WaitForUnit"			"UnitZombie_3a"
+			"WaitForUnit"			"UnitWolf_3a"
 			"WaitForTime"			"15"
 			
-			"NPCName"				"npc_dota_creature_basic_zombie"
+			"NPCName"				"npc_2_wolf"
 			"TotalUnitsToSpawn"		"6"
 			"UnitsPerSpawn"			"6"
 			//"SpawnInterval"			"25"
 
 		}
 		
-		"UnitZombieCorpseLord_5a"
+		"UnitWere_5a"
 		{
-			"GroupWithUnit"			"UnitZombie_5a"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"4"
+			"NPCName"				"npc_2_werewolf"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"3"
 		}
 		
-		"UnitZombie_5b"
+		"UnitWolf_5b"
 		{
-			"WaitForUnit"			"UnitZombie_3a"
+			"WaitForUnit"			"UnitWolf_3a"
 			"WaitForTime"			"15"
 			
-			"NPCName"				"npc_dota_creature_basic_zombie"
+			"NPCName"				"npc_2_wolf"
 			"TotalUnitsToSpawn"		"12"
 			"UnitsPerSpawn"			"12"
 		}
 		
-		"UnitZombieCorpseLord_5b"
+		"UnitWere_5b"
 		{
-			"GroupWithUnit"			"UnitZombie_5b"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
-			"TotalUnitsToSpawn"		"2"
-			"UnitsPerSpawn"			"2"
+			"NPCName"				"npc_2_werewolf"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"3"
 		}
 		
-		"UnitZombie_5c"
+		"UnitWere_5c"
 		{
-			"WaitForUnit"			"UnitZombie_3a"
+			"WaitForUnit"			"UnitWolf_3a"
 			"WaitForTime"			"15"
 			
-			"NPCName"				"npc_dota_creature_basic_zombie"
+			"NPCName"				"npc_2_wolf"
 			"TotalUnitsToSpawn"		"6"
 			"UnitsPerSpawn"			"6"
 		}
 		
-		"UnitZombieCorpseLord_5c"
+		"UnitWered_5c"
 		{
-			"GroupWithUnit"			"UnitZombie_5c"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
+			"NPCName"				"npc_2_werewolf"
 			"TotalUnitsToSpawn"		"2"
 			"UnitsPerSpawn"			"2"
 		}
 		
-		"UnitZombie_5d"
+		"UnitWolf_5d"
 		{
-			"WaitForUnit"			"UnitZombie_3a"
+			"WaitForUnit"			"UnitWolf_3a"
 			"WaitForTime"			"15"
 			
-			"NPCName"				"npc_dota_creature_basic_zombie"
+			"NPCName"				"npc_2_wolf"
 			"TotalUnitsToSpawn"		"6"
 			"UnitsPerSpawn"			"6"
 		}
 		
-		"UnitZombieCorpseLord_5d"
+		"UnitWere_5d"
 		{
-			"GroupWithUnit"			"UnitZombie_5d"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
+			"NPCName"				"npc_2_werewolf"
 			"TotalUnitsToSpawn"		"2"
 			"UnitsPerSpawn"			"2"
 		}
 		
 		// Stage Finale ================================================
-		"UnitZombieSupport_Finale"
+		"UnitWolf_Finale"
 		{
-			"WaitForUnit"			"UnitZombie_5a"
+			"WaitForUnit"			"UnitWolf_5a"
 			"WaitForTime"			"15"
 			
-			"NPCName"				"npc_dota_creature_basic_zombie"
+			"NPCName"				"npc_2_wolf"
 			"TotalUnitsToSpawn"		"40"
 			"UnitsPerSpawn"			"20"
 			"SpawnInterval"			"8"
 		}
 		
-		"UnitZombieCorpseLord_Finale"
+		"UnitWere_Finale"
 		{
-			"WaitForUnit"			"UnitZombie_5a"
-			"GroupWithUnit"			"UnitZombieSupport_Finale"
+			"WaitForUnit"			"UnitWolf_5a"
+			"GroupWithUnit"			"UnitWolf_Finale"
 			
-			"NPCName"				"npc_dota_creature_corpselord"
+			"NPCName"				"npc_2_werewolf"
 			"TotalUnitsToSpawn"		"4"
 			"UnitsPerSpawn"			"2"
 		}
 		
-		"UnitZombieSupport_Finale_b"
+		"UnitWolf_Finale_b"
 		{
-			"WaitForUnit"			"UnitZombie_5a"
+			"WaitForUnit"			"UnitWolf_5a"
 			"WaitForTime"			"15"
 			
-			"NPCName"				"npc_dota_creature_basic_zombie"
+			"NPCName"				"npc_2_wolf"
 			"TotalUnitsToSpawn"		"40"
 			"UnitsPerSpawn"			"20"
 			"SpawnInterval"			"8"
 		}
 		
-		"UnitZombieCorpseLord_Finale_b"
+		"UnitWere_Finale_b"
 		{
-			"WaitForUnit"			"UnitZombie_5a"
-			"GroupWithUnit"			"UnitZombieSupport_Finale_b"
+			"WaitForUnit"			"UnitWolf_5a"
+			"GroupWithUnit"			"UnitWolf_Finale_b"
 			
-			"NPCName"				"npc_dota_creature_corpselord"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"2"
+			"NPCName"				"npc_2_werewolf"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"4"
 		}
 	}
 	
-	"Round3" // Ogres
+	"Round3" // Pudges
 	{
-		"round_quest_title"			"#DOTA_Holdout_Round_Ogre_Quest_Title"
-		"round_title"				"#DOTA_Holdout_Round_Ogre_Title"
-		"MaxGold"					"1200" //600g from gold fountain ability
+		"round_quest_title"			"#DOTA_Holdout_Round_Pudges_Quest_Title"
+		"round_title"				"#DOTA_Holdout_Round_Pudges_Title"
+		"MaxGold"					"1200"
 		"BagCount"					"20"
 		"BagVariance"				"75"
 		"FixedXP"					"10500"
 		
 		// Stage 1 ================================================
-		"UnitMelee_1" // Duration 20s
+		"UnitLil_1a"
 		{
-			"NPCName"				"npc_dota_creature_ogre_melee"
-			"TotalUnitsToSpawn"		"8"
+			"NPCName"				"npc_3_lilpudge"
+			"TotalUnitsToSpawn"		"16"
 			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"20"
 		}
-		
-		"UnitRanged_1"
-		{
-			"GroupWithUnit"			"UnitMelee_1"
-			
-			"NPCName"				"npc_dota_creature_ogre_magi"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"4"
-		}
 
-		"UnitOgreTank_1"
+		"UnitBig_1a"
 		{
-			"GroupWithUnit"			"UnitMelee_2"
+			"GroupWithUnit"			"UnitLil_1a"
 			
-			"NPCName"				"npc_dota_creature_ogre_tank"
+			"NPCName"				"npc_3_bigpudge"
 			"TotalUnitsToSpawn"		"2"
 			"UnitsPerSpawn"			"2"
 		}
 
 		// Stage 2 ================================================
-		"UnitMelee_2" // Duration 120s + 10s WaitForTime
+		"UnitLil_2a"
 		{
-			"WaitForUnit"			"UnitMelee_1"
+			"WaitForUnit"			"UnitLil_1a"
 			"WaitForTime"			"10"
 			
-			"NPCName"				"npc_dota_creature_ogre_melee"
+			"NPCName"				"npc_3_lilpudge"
 			"TotalUnitsToSpawn"		"16"
 			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"40"
 		}
 		
-		"UnitRanged_2"
+		"UnitBig_2a"
 		{
-			"GroupWithUnit"			"UnitMelee_2"
+			"GroupWithUnit"			"UnitLil_2a"
 			
-			"NPCName"				"npc_dota_creature_ogre_magi"
-			"TotalUnitsToSpawn"		"6"
+			"NPCName"				"npc_3_bigpudge"
+			"TotalUnitsToSpawn"		"4"
 			"UnitsPerSpawn"			"2"
 		}
 		
-		"UnitOgreTank_2"
+		// Stage 3 =====================================
+		"UnitLil_3a"
 		{
-			"GroupWithUnit"			"UnitMelee_2"
-			
-			"NPCName"				"npc_dota_creature_ogre_tank"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
-		}
-		
-		// Stage 2 Concurrent =====================================
-		"UnitMelee_2b" // Duration 120s + 10s
-		{
-			"WaitForUnit"			"UnitMelee_1"
-			"WaitForTime"			"10"
-			
-			"NPCName"				"npc_dota_creature_ogre_melee"
-			"TotalUnitsToSpawn"		"32"
-			"UnitsPerSpawn"			"8"
-			"SpawnInterval"			"20"
-		}
-		
-		"UnitRanged_2b"
-		{
-			"GroupWithUnit"			"UnitMelee_2b"
-			
-			"NPCName"				"npc_dota_creature_ogre_magi"
-			"TotalUnitsToSpawn"		"16"
-			"UnitsPerSpawn"			"4"
-		}
-		
-		"UnitMelee_2c" // Duration 100s + 30s
-		{
-			"WaitForUnit"			"UnitMelee_1"
+			"WaitForUnit"			"UnitMelee_2a"
 			"WaitForTime"			"30"
 			
-			"NPCName"				"npc_dota_creature_ogre_melee"
-			"TotalUnitsToSpawn"		"32"
-			"UnitsPerSpawn"			"8"
-			"SpawnInterval"			"20"
+			"NPCName"				"npc_3_lilpudge"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
+			"SpawnInterval"			"10"
 		}
 		
-		"UnitRanged_2b"
+		"UnitLil_3b"
 		{
-			"GroupWithUnit"			"UnitMelee_2c"
-			
-			"NPCName"				"npc_dota_creature_ogre_magi"
+			"NPCName"				"npc_3_lilpudge"
 			"TotalUnitsToSpawn"		"16"
 			"UnitsPerSpawn"			"4"
+			"SpawnInterval"			"5"
+		}
+		
+		"UnitLil_3c"
+		{
+			"NPCName"				"npc_3_lilpudge"
+			"TotalUnitsToSpawn"		"10"
+			"UnitsPerSpawn"			"2"
+			"SpawnInterval"			"3"
+		}
+		
+		"UnitBig_3a"
+		{
+			"GroupWithUnit"			"UnitMelee_3b"
+			
+			"NPCName"				"npc_3_bigpudge"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"1"
 		}
 	}
 	

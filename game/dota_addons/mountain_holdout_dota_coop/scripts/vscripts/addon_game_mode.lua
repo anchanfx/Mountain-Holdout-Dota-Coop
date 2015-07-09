@@ -43,6 +43,10 @@ function Precache( context )
 
 	PrecacheUnitByNameSync("npc_1_swordsman", context)
 	PrecacheUnitByNameSync("npc_1_ranger", context)
+	PrecacheUnitByNameSync("npc_2_wolf", context)
+	PrecacheUnitByNameSync("npc_2_werewolf", context)
+	PrecacheUnitByNameSync("npc_3_lilpudge", context)
+	PrecacheUnitByNameSync("npc_3_bigpudge", context)
 end
 
 -- Actually make the game mode when we activate
@@ -281,6 +285,7 @@ function CHoldoutGameMode:_CheckForDefeat()
 
 	if bAllPlayersDead or not self._entAncient or self._entAncient:GetHealth() <= 0 then
 		GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
+		SendToConsole( "+showscores" )
 		return
 	end
 end
@@ -293,7 +298,7 @@ function CHoldoutGameMode:_ThinkPrepTime()
 			UTIL_RemoveImmediate( self._entPrepTimeQuest )
 			self._entPrepTimeQuest = nil
 		end
-
+		
 		if self._nRoundNumber > #self._vRounds then
 			GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
 			return false
