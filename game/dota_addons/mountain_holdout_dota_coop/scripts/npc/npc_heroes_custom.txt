@@ -367,4 +367,14 @@
 		//"Ability4"				"npc_holdout_hero_ember_spirit_activate_fire_remnant"
 		//"Ability5"				"npc_holdout_hero_ember_spirit_fire_remnant"
 	}
+	
+	//=================================================================================================================
+	// HERO: Ember Spirit
+	//=================================================================================================================
+	"npc_dota_hero_enigma_holdout"
+	{
+		"override_hero"			"npc_dota_hero_enigma"
+		"Ability3"				"npc_holdout_hero_enigma_midnight_pulse"
+		//"Ability4"				"npc_holdout_hero_enigma_black_hole"
+	}
 }
