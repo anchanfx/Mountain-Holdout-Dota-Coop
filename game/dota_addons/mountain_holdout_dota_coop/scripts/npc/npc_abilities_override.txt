@@ -95,8 +95,9 @@
 	//=================================================================================================================
 	"item_smoke_of_deceit"
 	{
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
+		"ItemCost"						"300"
 	}
 
 	//=================================================================================================================
@@ -104,7 +105,7 @@
 	//=================================================================================================================
 	"item_ward_observer"
 	{
-
+		"ItemCost"						"50"
 		"ItemStackable"					"2"
 		"ItemInitialCharges"			"3"
 	}
@@ -296,7 +297,410 @@
 
 	"item_hand_of_midas"
 	{
+		"ItemPurchasable"	"0"
 		"AbilityCooldown"	"360"
 		"ItemCost"			"2000"
+	}
+
+	"item_tpscroll"
+	{
+		"ItemCost"			"50"
+		"AbilityCooldown"	"5"
+	}
+
+	"undying_tombstone"
+	{
+		"AbilityManaCost"				"150 180 210 250"
+		"AbilityCooldown"				"100.0 100.0 100.0 100.0"
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 6.0 9.0 12.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300 350 400 500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_threshold"		"100 100 100 100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"zombie_interval"		"3.0"
+			}
+		}
+	}
+
+	"alchemist_goblins_greed"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"1 1 1 2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_bonus_gold"		"1 1 1 2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold_cap"		"4"
+			}
+		}
+	}
+
+	"life_stealer_feast"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_leech_percent"		"0.6 0.9 1.2 1.5"
+			}
+		}
+	}
+
+	"life_stealer_open_wounds"
+	{
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30 27 24 21"
+		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDuration"				"3 4 5 6"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"120 150 180 210"	
+	}
+
+	"life_stealer_infest"
+	{
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"300 250 200"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 200 200"		
+	}
+
+	"pudge_rot"
+	{
+		"AbilityDamage"					"50 80 120 150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rot_radius"			"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rot_tick"				"0.2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rot_slow"				"-20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rot_tick_damage"		"10 16 24 30"
+			}
+		}
+	}
+
+	"pudge_flesh_heap"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"flesh_heap_magic_resist"		"6 8 10 12"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"flesh_heap_strength_buff_amount"	"0.05 0.05 0.05 0.05"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"flesh_heap_range"		"150"
+			}
+		}
+	}
+
+	"pudge_dismember"
+	{
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"2.95 2.95 2.95"
+		"AbilityCooldown"				"20.0 20.0 20.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 130 170"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dismember_damage"		"100 200 300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"strength_damage_scepter"		"2.0"
+			}
+		}
+	}
+
+	"ember_spirit_searing_chains"
+	{
+		"AbilityCooldown"				"16.0 14.0 12.0 10.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"0.6 0.9 1.2 1.5"
+			}
+			
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"400"
+			}	
+			
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"chains_damage"					"80 60 120 100"
+			}				
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"total_damage_tooltip"			"80 120 240 300"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"tick_interval"					"0.5"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"unit_count"					"10"
+			}			
+		}
+	}
+
+	"ember_spirit_sleight_of_fist"
+	{
+		"AbilityCastRange"				"1000"
+		"AOERadius"						"250 350 450 600"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6.0 4.0 3.0 2.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60 50 40 30"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"250 350 450 600"
+			}
+			
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_hero_damage"			"20 40 60 80"
+			}
+						
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"attack_interval"			"0.05"
+			}
+
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"creep_damage_penalty"			"-50"
+			}
+		}
+	}
+
+	"ember_spirit_activate_fire_remnant"
+	{
+		"AbilityCastRange"				"2500"
+		"AbilityManaCost"				"70"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed_multiplier"			"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"				"6"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"charge_restore_time"			"15.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100 150 200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"2000"
+			}
+		}
+	}
+
+	"ember_spirit_fire_remnant"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed_multiplier"				"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"				"6"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"charge_restore_time"				"15.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"50 100 150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"200"
+			}
+		}
+	}
+
+	"enigma_midnight_pulse"
+	{
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"155 170 185 200"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"400"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_percent"			"1 1.5 2 2.5"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"10"
+			}
+		}
+	}
+
+	"enigma_black_hole"
+	{
+		"AbilityCooldown"				"150.0 125.0 100.0"
+	}
+
+	"necrolyte_heartstopper_aura"
+	{
+		"AbilityCastRange"				"450"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"450"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aura_damage"		"-0.3 -0.6 -1.2 -1.5" 
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aura_damage_interval"		"0.2" 
+			}
+		}
 	}
 }
