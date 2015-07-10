@@ -317,7 +317,17 @@
 	"npc_dota_hero_alchemist_holdout"
 	{
 		"override_hero"			"npc_dota_hero_alchemist"
-		"Ability3"				"npc_holdout_hero_alchemist_goblins_greed"
+		//"Ability3"				"npc_holdout_hero_alchemist_goblins_greed"
+		"VisionNighttimeRange"		"1800"		
+	}
+
+	//=================================================================================================================
+	// HERO: Undying
+	//=================================================================================================================
+	"npc_dota_hero_undying_holdout"
+	{
+		"override_hero"			"npc_dota_hero_undying"
+		//"Ability3"				"npc_holdout_hero_undying_tombstone"
 		"VisionNighttimeRange"		"1800"		
 	}
 
@@ -327,9 +337,9 @@
 	"npc_dota_hero_life_stealer_holdout"
 	{
 		"override_hero"			"npc_dota_hero_life_stealer"
-		"Ability2"				"npc_holdout_hero_life_stealer_feast"
-		"Ability3"				"npc_holdout_hero_life_stealer_open_wounds"
-		"Ability6"				"npc_holdout_hero_life_stealer_infest"
+		//"Ability2"				"npc_holdout_hero_life_stealer_feast"
+		//"Ability3"				"npc_holdout_hero_life_stealer_open_wounds"
+		//"Ability6"				"npc_holdout_hero_life_stealer_infest"
 		"VisionNighttimeRange"		"1800"		
 	}
 
@@ -340,21 +350,31 @@
 	{
 		"override_hero"			"npc_dota_hero_pudge"
 		"Ability1"				"npc_holdout_hero_pudge_meat_hook"
-		"Ability2"				"npc_holdout_hero_pudge_rot"
-		"Ability3"				"npc_holdout_hero_pudge_flesh_heap"
-		"Ability4"				"npc_holdout_hero_pudge_dismember"
+		//"Ability2"				"npc_holdout_hero_pudge_rot"
+		//"Ability3"				"npc_holdout_hero_pudge_flesh_heap"
+		//"Ability4"				"npc_holdout_hero_pudge_dismember"
 	}
 
 	//=================================================================================================================
-	// HERO: Pudge
+	// HERO: Ember Spirit
 	//=================================================================================================================
 	"npc_dota_hero_ember_spirit_holdout"
 	{
 		"override_hero"			"npc_dota_hero_ember_spirit"
-		"Ability1"				"npc_holdout_hero_ember_spirit_searing_chains"
-		"Ability2"				"npc_holdout_hero_ember_spirit_sleight_of_fist"
+		//"Ability1"				"npc_holdout_hero_ember_spirit_searing_chains"
+		//"Ability2"				"npc_holdout_hero_ember_spirit_sleight_of_fist"
 		//"Ability3"				"npc_holdout_hero_ember_spirit_flame_guard"
 		//"Ability4"				"npc_holdout_hero_ember_spirit_activate_fire_remnant"
 		//"Ability5"				"npc_holdout_hero_ember_spirit_fire_remnant"
+	}
+	
+	//=================================================================================================================
+	// HERO: Enigma
+	//=================================================================================================================
+	"npc_dota_hero_enigma_holdout"
+	{
+		"override_hero"			"npc_dota_hero_enigma"
+		//"Ability3"				"npc_holdout_hero_enigma_midnight_pulse"
+		//"Ability4"				"npc_holdout_hero_enigma_black_hole"
 	}
 }
